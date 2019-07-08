@@ -36,7 +36,7 @@ module Gauze
 
     def initialize(resource, params = {})
       @resource = resource
-      @params = params.symbolize_keys
+      @params = params.transform_keys(&:to_sym)
     end
 
     def build
